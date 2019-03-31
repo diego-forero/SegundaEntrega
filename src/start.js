@@ -4,6 +4,7 @@ const path=require('path');
 const hbs=require('hbs');
 const bodyParser = require ('body-parser')
 require('./helpers/helpers')
+require('./funciones')
 
 const directorioviews=path.join(__dirname,'../template/views')
 
@@ -35,11 +36,18 @@ app.get(['/','/index'],(req,res)=>{
     })
 })
 
+app.get('/crear',(req,res)=>{
+    // res.send('RESPUESTA DESDE INDEX');
+    res.render('crear',{
+        estudiante: 'Diego'
+    })
+})
+
 
 
 
 app.listen(3002,()=>{
-    console.log('Escuchando en el puerto 3001')
+    console.log('Escuchando en el puerto 3002')
 })
 
 
