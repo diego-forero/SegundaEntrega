@@ -1,13 +1,81 @@
 {{>header}}
 
 <h1><strong>Formulario para ingresar un nuevo curso</strong></h1>
-<form action="/crear" method="post">
+
+
+
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container">
+       <table class="table table-striped">
+          <tbody>
+             <tr>
+                <td colspan="1">
+                   <form class="well form-horizontal">
+                      <fieldset>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">Id</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span><input id="courseid" name="idfield" placeholder="Id" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                         </div>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">Nombre del curso:</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></span><input id="coursename" name="coursename" placeholder="Nombre" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                         </div>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">Descripción del curso</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon glyphicon-list"></i></span><input id="coursedesc" name="coursedesc" placeholder="Descripción" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                         </div>                 
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">Valor:</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span><input id="courseprice" name="courseprice" placeholder="Valor" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                         </div>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">Modalidad:</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-adjust"></i></span><input id="coursemodalidad" name="coursemodalidad" placeholder="Modalidad" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                         </div>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">Intensidad horaria:</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-flash"></i></span><input id="courseintensidad" name="courseintensidad" placeholder="Intensidad horaria" class="form-control" required="true" value="" type="text"></div>
+                            </div>
+                         </div>
+                         <div class="form-group">
+                            <label class="col-md-4 control-label">Estado</label>
+                            <div class="col-md-8 inputGroupContainer">
+                               <div class="input-group">
+                                  <span class="input-group-addon" style="max-width: 100%;"><i class="glyphicon glyphicon glyphicon-send"></i></span>
+                                  <select class="selectpicker form-control">
+                                     <option>A really long option to push the menu over the edget</option>
+                                  </select>
+                               </div>
+                            </div>
+                         </div>
+                      </fieldset>
+                   </form>
+                </td>
+             </tr>
+          </tbody>
+       </table>
+    </div>
+
+{{!-- <form action="/crear" method="post">
+
     <input type="text" name="nombre">
     <input type="number" name="nota1">
     <input type="number" name="nota2">
     <input type="number" name="nota3">
     <button>Calcular</button>
-</form>
+</form> --}}
 
 
 {{>footer}}
