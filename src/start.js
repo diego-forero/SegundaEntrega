@@ -3,8 +3,9 @@ const app=express();
 const path=require('path');
 const hbs=require('hbs');
 const bodyParser = require ('body-parser')
-require('./helpers/helpers')
-require('./funciones')
+helpers= require('./helpers/helpers')
+const funciones = require ('./funciones')
+
 
 const directorioviews=path.join(__dirname,'../template/views')
 
@@ -43,11 +44,36 @@ app.get('/crear',(req,res)=>{
     })
 })
 
+app.post('/creacion',(req,res)=>{
+    // res.send('RESPUESTA DESDE CALCULOS');
+    res.render('creacion',{
+        id: parseInt(req.body.idfield),
+        nombre: req.body.coursename,
+        descripcion: req.body.coursedesc,
+        valor: parseInt(req.body.courseprice),
+        modalidad: req.body.coursemodalidad,
+        intensidad: parseInt(req.body.courseintensidad),
+        estado: req.body.courseestado
+    });
+
+    const curso ={
+        id: req.body.idfield,
+        nombre: req.body.coursename,
+        descripcion: req.body.coursedesc,
+        valor: req.body.courseprice,
+        intensidad: req.body.courseintensidad,
+        modalidad: req.body.coursemodalidad,
+        estado: req.body.courseestado
+    }
+    
+    console.log(curso)
+    funciones.crear(curso)
+
+})
+
 
 
 
 app.listen(3002,()=>{
     console.log('Escuchando en el puerto 3002')
 })
-
-

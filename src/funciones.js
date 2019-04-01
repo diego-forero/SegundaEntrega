@@ -19,7 +19,7 @@ const crear=(curso)=>{
     console.log(listaCursos)
     guardar();
     } else {
-        console.log('El usuario ya existe!')
+        console.log('El curso ya existe!')
     }
 }
 
@@ -38,4 +38,11 @@ const guardar=()=>{
         if(err) throw (err);
         console.log('curso creado con exito!!')
     })
+}
+
+
+module.exports={
+    crear,
+    listar,
+    guardar
 }
