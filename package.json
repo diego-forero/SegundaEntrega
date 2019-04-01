@@ -2,7 +2,7 @@
   "name": "segunda-entrega",
   "version": "1.0.0",
   "description": "Modulo dos: Web usando express para información general de cursos",
-  "main": "src/start",
+  "main": "src/start.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

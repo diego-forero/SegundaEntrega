@@ -11,22 +11,24 @@ const crear=(curso)=>{
         modalidad:curso.modalidad,
         valor:curso.valor,
         descripcion:curso.descripcion,
-        intensidad:curso.intensidad
+        intensidad:curso.intensidad,
+        estado:curso.estado
     };
-    let duplicado =listaCursos.find(nom=>nom.nombre==curso.nombre);
+    let duplicado =listaCursos.find(nom=>nom.id==curso.id);
     if(!duplicado){
     listaCursos.push(curs);
     console.log(listaCursos)
     guardar();
     } else {
-        console.log('El usuario ya existe!')
+        console.log('El curso ya existe! Intente nuevamente')
     }
+    return(duplicado)
 }
 
 const listar = ()=>{
     try{
-        listaCursos=require('./listado.json')  //cuando es fijo y no cambia en el tiempo ....de forma asincronica
-        // listaCursos=JSON.parse(fs.readFileSync('listado.json')) //se usa cuando es dinámico.....de forma sincronica
+        listaCursos=require('./../listado.json')  
+        
     } catch(error){
         listaCursos=[];
     }
@@ -36,6 +38,13 @@ const guardar=()=>{
     let datos=JSON.stringify(listaCursos);
     fs.writeFile('listado.json',datos,(err)=>{
         if(err) throw (err);
-        console.log('curso creado con exito!!')
+        console.log('Curso creado con exito!!')
     })
+}
+
+
+module.exports={
+    crear,
+    listar,
+    guardar
 }
