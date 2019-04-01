@@ -6,6 +6,14 @@ const bodyParser = require ('body-parser')
 helpers= require('./helpers/helpers')
 const funciones = require ('./funciones')
 
+const dirNode_modules = path.join(__dirname , '../node_modules')
+
+app.use('/css', express.static(dirNode_modules + '/bootstrap/dist/css'));
+app.use('/js', express.static(dirNode_modules + '/jquery/dist'));
+app.use('/js', express.static(dirNode_modules + '/popper.js/dist'));
+
+app.use('/js', express.static(dirNode_modules + '/bootstrap/dist/js'));
+
 
 const directorioviews=path.join(__dirname,'../template/views')
 
